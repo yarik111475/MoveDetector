@@ -32,7 +32,6 @@ ApplicationWindow {
             MouseArea{
                 anchors.fill: parent;
                 onClicked: {
-                    console.log("menu image clicked");
                     mainMenu.visible=true;
                 }
             }

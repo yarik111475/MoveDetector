@@ -3,7 +3,6 @@
 
 #include <QtCore>
 #include <QObject>
-#include <QElapsedTimer>
 #include <QAccelerometer>
 
 class MoveHandler : public QObject
@@ -12,8 +11,8 @@ class MoveHandler : public QObject
 private:
 
     QAccelerometer m_accelerometer;
-    QElapsedTimer m_elapsedTimer;
     QTimer m_timer;
+    int m_workTime;
     int m_moveTime;
     int m_currentX;
     int m_currentY;

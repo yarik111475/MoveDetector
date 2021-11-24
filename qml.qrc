@@ -2,7 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>icons/menu.png</file>
-        <file>icons/qt.ico</file>
         <file>icons/qt.png</file>
     </qresource>
 </RCC>

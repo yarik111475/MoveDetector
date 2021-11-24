@@ -2,6 +2,7 @@
 
 void MoveHandler::init()
 {
+    m_workTime=0;
     m_moveTime=0;
     m_currentX=0;
     m_currentY=0;
@@ -11,6 +12,7 @@ void MoveHandler::init()
 
 void MoveHandler::slotTimeout()
 {
+    m_workTime++;
     if((m_oldX==m_currentX) &&
        (m_oldY==m_currentY)){
         return;
@@ -35,17 +37,14 @@ void MoveHandler::slotStart()
 {
     init();
     m_timer.start();
-    m_elapsedTimer.start();
     m_accelerometer.start();
 }
 
 void MoveHandler::slotStop()
 {
-    int workTime=m_elapsedTimer.elapsed()/1000;
     m_timer.stop();
     m_accelerometer.stop();
-
-    emit signalStop(workTime, m_moveTime);
+    emit signalStop(m_workTime, m_moveTime);
 }
 
 void MoveHandler::slotReadingChanged()
